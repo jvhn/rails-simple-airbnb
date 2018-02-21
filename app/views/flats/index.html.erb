@@ -1,0 +1,24 @@
+<h1>All our Flats</h1>
+
+<div class="cards">
+  <% @flats.each_with_index do |flat, index| %>
+    <div class="card">
+      <div class="card_head">
+        <img src="/../../assets/images/<%= index %>.jpg">
+      </div>
+      <div class="card_content wrapper-grey">
+        <h3><%= flat.name %></h3>
+        <p><%= flat.description %></p>
+        <div class="card_infos">
+          <p><i class="fas fa-users"></i><%= flat.number_of_guests %></p>
+          <p><i class="fas fa-euro-sign"></i><%= flat.price_per_night %></p>
+        </div>
+      </div>
+      <div class="card_footer btn-group">
+        <%= link_to 'More info', flat_path(flat), class: 'btn btn-more' %>
+        <%= link_to 'Edit', edit_flat_path(flat), class: 'btn btn-edit' %>
+        <%= link_to 'Remove', flat_path(flat), method: :delete, class: 'btn btn-remove' %>
+      </div>
+    </div>
+  <% end %>
+</div>

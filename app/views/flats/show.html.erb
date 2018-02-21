@@ -1,0 +1,18 @@
+
+<div>
+  <h1><%= @flat.name %></h1>
+
+  <p><%= @flat.address %></p>
+
+  <p><%= @flat.description %></p>
+
+  <p><%= @flat.number_of_guests %> guests</p>
+
+  <p><%= @flat.price_per_night %> € </p>
+
+
+  <div class="btn-group" role="group">
+    <%= link_to 'Edit', edit_flat_path(@flat), class: 'btn btn-light' %>
+    <%= link_to 'Remove', flat_path(@flat), method: :delete, class: 'btn btn-light' %>
+  </div>
+</div>
